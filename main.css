@@ -113,6 +113,18 @@ body{
 
 }
 
+.delete{
+    border: none;
+    background: none;
+    
+}
+
+.delete img{
+    max-width: 21px;
+    max-height: 21px;
+    margin-left: 2px;
+}
+
 .card{
     background: #04454d;
     color: #fff;
