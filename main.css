@@ -15,6 +15,23 @@ body{
     
 }
 
+.modal_btn{
+    padding: 10px;
+    border-radius: 100%;
+    border: none;
+    background: #04a061;
+    font-weight: 400;
+    color: #F5F2EB;
+}
+
+.modal_input{
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 30px;
+    font-family: 'Open Sans', sans-serif;
+}
+
 .header_content{
     display: flex;
 }
@@ -105,9 +122,10 @@ body{
 }
 
 .card_wrapper{
+    padding-top: 10px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 8px;
 }
 
 .modal{
@@ -118,6 +136,7 @@ body{
     position: absolute;
     left: 650px;
     top: 300px;
+    align-items: center;
 }
 
 .modal_title{
@@ -140,4 +159,32 @@ body{
     background: #04a061;
     font-weight: 400;
     color: #F5F2EB;
+}
+
+.modal_task{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-height: 300px;
+}
+
+.modal_task input{
+    width: 290px;
+
+}
+
+@media screen and (max-width:1440px){
+    .tags{
+        margin-right: 25px;
+    }
+
+    .users{
+        margin-right: 80px; 
+    }
+}
+
+@media screen and (max-width:1320px){
+.wrapper{
+gap: 400px;
+}
 }
