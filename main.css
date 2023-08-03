@@ -11,7 +11,7 @@ body{
 .wrapper{
     display: flex;
     gap: 500px;
-    padding: 20px 100px 0px 100px;
+    padding: 20px 60px 20px 100px;
     
 }
 
@@ -34,10 +34,12 @@ body{
 
 .header_content{
     display: flex;
+    width: 900px;
+    justify-content: space-between;
 }
 
 .header{
-    height: 10vh;
+    min-height: 91px;
     background: #04ba71;
     
 }
@@ -50,11 +52,11 @@ body{
     background: #F5F2EB;
     color: #04454d;
     font-size: 18px;
-    margin-right: 100px;
+    /* margin-right: 100px; */
 }
 
 .users{
-    margin-right: 150px;
+    margin-right: 0px;
 }
 
 .settings{
@@ -73,7 +75,7 @@ body{
     font-size: 16px;
     border-radius: 30px;
     font-family: 'Open Sans', sans-serif;
-    margin-right: 140px;
+    /* margin-right: 140px; */
 }
 
 .logo{
@@ -82,24 +84,37 @@ body{
     font-size: 27px;
     font-weight: 700;
     text-transform: uppercase;
+    margin-top: 10px;
 }
 
 .container{
     background:#04a061 ;
     display: flex;
+    flex-wrap: wrap;
     gap: 30px;
-    height: 90vh;
+    min-height: 900px;
     padding:80px 0 0 80px;
 }
 
 .board{
     background:#fdc827 ;
-    min-width: 200px;
+    min-width: 320px;
+    max-width: 320px;
     padding: 10px 15px 0 10px;
     border-radius: 8px;
-    max-height: 300px;
+    max-height: 400px;
 }
 
+.board_error{
+    color: rgb(255, 109, 109);
+    margin:14px 0 0 10px;
+    display: none;
+}
+.board_error_2{
+    color: rgb(255, 109, 109);
+    margin:14px 0 0 10px;
+    display: none;
+}
 .board_top{
     display: flex;
     justify-content: space-between;
@@ -142,7 +157,7 @@ body{
 
 .modal{
     background:#F5F2EB ;
-    max-height: 150px;
+    max-height: 160px;
     padding: 30px 40px 30px 40px;
     border-radius: 10px;
     position: absolute;
@@ -182,21 +197,60 @@ body{
 
 .modal_task input{
     width: 290px;
-
 }
-
-@media screen and (max-width:1440px){
+@media screen and (max-width:1350px){
+    .wrapper{
+    gap: 260px;
+    }
+    .modal{
+        left: 520px;
+        top: 250px;
+    }
+}
+@media screen and (max-width:1200px){
+    .wrapper{
+    gap: 220px;
+    }
+    .modal{
+        left: 450px;
+        top: 230px;
+    }
+}
+@media screen and (max-width:1024px){
+    .wrapper{
+    gap: 160px;
+    }
     .tags{
-        margin-right: 25px;
+        max-width: 170px;
     }
-
-    .users{
-        margin-right: 80px; 
+    .modal{
+        left: 340px;
+        top: 220px;
     }
 }
+@media screen and (max-width:900px){
+    .wrapper{
+    gap: 80px;
+    }
+    .container{
+        padding: 80px 0 0 50px;
+    }
+    .wrapper{
+        padding: 20px 60px 20px 50px;
+    }
+    .modal{
+        left: 280px;
+        top: 220px;
+    }
 
-@media screen and (max-width:1320px){
-.wrapper{
-gap: 400px;
 }
+
+@media screen and (max-width:750px){
+    .wrapper{
+    gap: 40px;
+    }
+    .modal{
+        left: 210px;
+        top: 220px;
+    }
 }

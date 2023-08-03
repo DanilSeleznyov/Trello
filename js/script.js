@@ -4,10 +4,6 @@ const createBtn = document.querySelector('.create'),
     addBtns = document.querySelectorAll('.add')
     
 createBtn.addEventListener('click', showModalBoard)
-addBtns.forEach(el => {
-    el.addEventListener('click', showModalTask)
-});
-
 if (JSON.parse(localStorage.getItem('Boards'))) {
     saveBoard(arrBoards)
 }
