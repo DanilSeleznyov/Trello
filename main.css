@@ -1,21 +1,23 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Poppins&display=swap');
 
-body{
+body {
     font-family: 'Open Sans', sans-serif;
 }
-.wrapper{
+
+.wrapper {
     display: flex;
     gap: 500px;
     padding: 20px 60px 20px 100px;
-    
+
 }
 
-.modal_btn{
+.modal_btn {
     padding: 10px;
     border-radius: 100%;
     border: none;
@@ -24,7 +26,7 @@ body{
     color: #F5F2EB;
 }
 
-.modal_input{
+.modal_input {
     border: none;
     padding: 10px;
     font-size: 16px;
@@ -32,19 +34,19 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 
-.header_content{
+.header_content {
     display: flex;
     width: 900px;
     justify-content: space-between;
 }
 
-.header{
+.header {
     min-height: 91px;
     background: #04ba71;
-    
+
 }
 
-.create{
+.create {
     padding: 15px;
     border-radius: 10px;
     border: none;
@@ -55,11 +57,11 @@ body{
     /* margin-right: 100px; */
 }
 
-.users{
+.users {
     margin-right: 0px;
 }
 
-.settings{
+.settings {
     padding: 15px;
     border-radius: 10px;
     border: none;
@@ -69,7 +71,7 @@ body{
     font-size: 18px;
 }
 
-.tags{
+.tags {
     border: none;
     padding-left: 10px;
     font-size: 16px;
@@ -78,7 +80,7 @@ body{
     /* margin-right: 140px; */
 }
 
-.logo{
+.logo {
     color: #fdc827;
     font-family: 'Poppins', sans-serif;
     font-size: 27px;
@@ -87,17 +89,17 @@ body{
     margin-top: 10px;
 }
 
-.container{
-    background:#04a061 ;
+.container {
+    background: #04a061;
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
     min-height: 900px;
-    padding:80px 0 0 80px;
+    padding: 80px 0 0 80px;
 }
 
-.board{
-    background:#fdc827 ;
+.board {
+    background: #fdc827;
     min-width: 320px;
     max-width: 320px;
     padding: 10px 15px 0 10px;
@@ -105,22 +107,24 @@ body{
     max-height: 400px;
 }
 
-.board_error{
+.board_error {
     color: rgb(255, 109, 109);
-    margin:14px 0 0 10px;
+    margin: 14px 0 0 10px;
     display: none;
 }
-.board_error_2{
+
+.board_error_2 {
     color: rgb(255, 109, 109);
-    margin:14px 0 0 10px;
+    margin: 14px 0 0 10px;
     display: none;
 }
-.board_top{
+
+.board_top {
     display: flex;
     justify-content: space-between;
 }
 
-.add{
+.add {
     border: none;
     background: none;
     color: #04ba71;
@@ -128,19 +132,19 @@ body{
 
 }
 
-.delete{
+.delete {
     border: none;
     background: none;
-    
+
 }
 
-.delete img{
+.delete img {
     max-width: 21px;
     max-height: 21px;
     margin-left: 2px;
 }
 
-.card{
+.card {
     background: #04454d;
     color: #fff;
     padding: 6px;
@@ -148,15 +152,15 @@ body{
 
 }
 
-.card_wrapper{
+.card_wrapper {
     padding-top: 10px;
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.modal{
-    background:#F5F2EB ;
+.modal {
+    background: #F5F2EB;
     max-height: 160px;
     padding: 30px 40px 30px 40px;
     border-radius: 10px;
@@ -166,12 +170,12 @@ body{
     align-items: center;
 }
 
-.modal_title{
+.modal_title {
     font-size: 29px;
     margin-bottom: 10px;
 }
 
-.board_name{
+.board_name {
     border: none;
     padding: 10px;
     font-size: 16px;
@@ -179,7 +183,7 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 
-.create_board{
+.create_board {
     padding: 10px;
     border-radius: 100%;
     border: none;
@@ -188,69 +192,119 @@ body{
     color: #F5F2EB;
 }
 
-.modal_task{
+.card_desc {
+    margin: 7px 0 7px 0;
+}
+
+.modal_task {
     display: flex;
     flex-direction: column;
     gap: 6px;
     min-height: 300px;
 }
 
-.modal_task input{
+.modal_task input {
     width: 290px;
 }
-@media screen and (max-width:1350px){
-    .wrapper{
-    gap: 260px;
+
+@media screen and (max-width:1350px) {
+    .wrapper {
+        gap: 260px;
     }
-    .modal{
+
+    .modal {
         left: 520px;
         top: 250px;
     }
 }
-@media screen and (max-width:1200px){
-    .wrapper{
-    gap: 220px;
+
+@media screen and (max-width:1200px) {
+    .wrapper {
+        gap: 220px;
     }
-    .modal{
+
+    .modal {
         left: 450px;
         top: 230px;
     }
 }
-@media screen and (max-width:1024px){
-    .wrapper{
-    gap: 160px;
+
+@media screen and (max-width:1024px) {
+    .wrapper {
+        gap: 160px;
     }
-    .tags{
+
+    .tags {
         max-width: 170px;
     }
-    .modal{
+
+    .modal {
         left: 340px;
         top: 220px;
     }
 }
-@media screen and (max-width:900px){
-    .wrapper{
-    gap: 80px;
+
+@media screen and (max-width:900px) {
+    .wrapper {
+        gap: 80px;
     }
-    .container{
+
+    .container {
         padding: 80px 0 0 50px;
     }
-    .wrapper{
+
+    .wrapper {
         padding: 20px 60px 20px 50px;
     }
-    .modal{
+
+    .modal {
         left: 280px;
         top: 220px;
     }
 
 }
 
-@media screen and (max-width:750px){
-    .wrapper{
-    gap: 40px;
+@media screen and (max-width:750px) {
+    .wrapper {
+        gap: 40px;
     }
-    .modal{
+
+    .modal {
         left: 210px;
         top: 220px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .tags {
+        max-width: 105px;
+    }
+
+    .settings{
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    .create{
+        padding: 11px;
+        font-size: 14px;
+    }
+
+    .header{
+        min-height: 80px;
+    }
+
+    .wrapper{
+        gap: 20px;
+    }
+
+    .logo{
+        font-size: 23px;
+    }
+}
+
+@media screen and (max-width:450px){
+    .wrapper{
+        padding: 20px 60px 20px 20px;
     }
 }
