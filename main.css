@@ -105,6 +105,7 @@ body {
 
 .boards_user{
     display: flex;
+    flex-wrap:wrap ;
     gap: 30px;
 }
 
@@ -232,12 +233,24 @@ body {
 .user_img{
     border-radius: 100%;
 }
-.user_name{
-    display: none;
+
+.user{
+    position: relative;
 }
-.user_email{
+
+.details{
     display: none;
+    position: absolute;
+    background: #fdc827;
+    top: 57px;
+    padding: 7px;
+    border-radius: 10px;
 }
+
+.user:hover .details{
+    display: block;
+}
+
 
 @media screen and (max-width:1350px) {
     .wrapper {

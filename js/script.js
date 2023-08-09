@@ -7,3 +7,4 @@ createBtn.addEventListener('click', showModalBoard)
 if (JSON.parse(localStorage.getItem('Boards'))) {
     saveBoard(arrBoards)
 }
+getUsers()

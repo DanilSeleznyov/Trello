@@ -18,7 +18,6 @@ function showModalBoard() {
                 document.querySelector('.board_error_2').style.display = 'block'
                 document.querySelector('.board_error').style.display = 'none'
             } else {
-                
                 arrBoards.push(document.querySelector('.board_name').value)
                 localStorage.setItem(`Boards`, JSON.stringify(arrBoards))
                 document.querySelector('.modal').remove()
