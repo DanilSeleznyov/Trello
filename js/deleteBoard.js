@@ -1,4 +1,7 @@
-function deleteBoard() {
-    console.log(2);
-    
+function deleteBoard(index) {
+    arrBoards = JSON.parse(localStorage.getItem('Boards'))
+    arrBoards.splice(index, 1)
+    updateLocal()
+
+
 }

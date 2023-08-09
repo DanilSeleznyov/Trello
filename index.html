@@ -12,69 +12,78 @@
         <div class="logo">trello</div>
         <div class="header_content">
           <button class="create">Create</button>
-          <div class="users">USERS</div>
+          <div class="users">
+            <button class="add_user">+</button>
+            <div class="users_wrapper">
+
+            </div>
+          </div>
           <input type="text" class="tags" placeholder="tags" />
           <button class="settings">Settings</button>
         </div>
       </div>
     </header>
     <div class="container">
-      <div class="board">
-        <div class="board_top">
-          <h2 class="title">Треба зробити</h2>
-          <div class="board_btns">
-          <button class="add" onclick="showModalTask()">+</button>
-          <button class="delete" onclick="deleteBoard()"><img src="icons8-delete-50.png" alt=""></button>
+      <div class="boards_main">
+        <div class="board">
+          <div class="board_top">
+            <h2 class="title">Треба зробити</h2>
+            <div class="board_btns">
+            <button class="add" onclick="showModalTask()">+</button>
+            </div>
+          </div>
+          <div class="card_wrapper">
+            <div class="card">
+              <h2 class="card_title">Title</h2>
+              <div class="tags_wrapper"></div>
+              <p class="card_desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+                ipsam modi nihil ipsum quos, ut ad officiis quo sapiente dolorem.
+              </p>
+              <div class="card_deadline">22/02/22</div>
+            </div>
           </div>
         </div>
-        <div class="card_wrapper">
-          <div class="card">
-            <h2 class="card_title">Title</h2>
-            <div class="tags_wrapper"></div>
-            <p class="card_desc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-              ipsam modi nihil ipsum quos, ut ad officiis quo sapiente dolorem.
-            </p>
-            <div class="card_deadline">22/02/22</div>
+        <div class="board">
+          <div class="board_top">
+            <h2 class="title">В процесі</h2>
+            <div class="board_btns">
+            <button class="add" onclick="showModalTask()">+</button>
+            </div>
+          </div>
+          <div class="card_wrapper">
+            <div class="card">
+              <h2 class="card_title">Title</h2>
+              <div class="tags_wrapper"></div>
+            </div>
+          </div>
+        </div>
+        <div class="board">
+          <div class="board_top">
+            <h2 class="title">Зроблено</h2>
+            <div class="board_btns">
+            <button class="add" onclick="showModalTask()">+</button>
+            </div>
+          </div>
+          <div class="card_wrapper">
+            <div class="card">
+              <h2 class="card_title">Title</h2>
+              <div class="tags_wrapper"></div>
+            </div>
+            <div class="card">
+              <h2 class="card_title">Title</h2>
+              <div class="tags_wrapper"></div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="board">
-        <div class="board_top">
-          <h2 class="title">В процесі</h2>
-          <div class="board_btns">
-          <button class="add" onclick="showModalTask()">+</button>
-          <button class="delete" onclick="deleteBoard()"><img src="icons8-delete-50.png" alt=""></button>
-          </div>
-        </div>
-        <div class="card_wrapper">
-          <div class="card">
-            <h2 class="card_title">Title</h2>
-            <div class="tags_wrapper"></div>
-          </div>
-        </div>
-      </div>
-      <div class="board">
-        <div class="board_top">
-          <h2 class="title">Зроблено</h2>
-          <div class="board_btns">
-          <button class="add" onclick="showModalTask()">+</button>
-          <button class="delete" onclick="deleteBoard()"><img src="icons8-delete-50.png" alt=""></button>
-          </div>
-        </div>
-        <div class="card_wrapper">
-          <div class="card">
-            <h2 class="card_title">Title</h2>
-            <div class="tags_wrapper"></div>
-          </div>
-          <div class="card">
-            <h2 class="card_title">Title</h2>
-            <div class="tags_wrapper"></div>
-          </div>
-        </div>
+      <div class="boards_user">
+
       </div>
     </div>
+    <script src="js/localStorage.js"></script>
     <script src="js/saveBoard.js"></script>
+    <script src="js/users.js"></script>
     <script src="js/deleteBoard.js"></script>
     <script src="js/addBoard.js"></script>
     <script src="js/showmodal.js"></script>

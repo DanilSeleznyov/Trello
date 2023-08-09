@@ -58,7 +58,8 @@ body {
 }
 
 .users {
-    margin-right: 0px;
+   display: flex;
+
 }
 
 .settings {
@@ -96,6 +97,15 @@ body {
     gap: 30px;
     min-height: 900px;
     padding: 80px 0 0 80px;
+}
+.boards_main{
+    display: flex;
+    gap: 30px;
+}
+
+.boards_user{
+    display: flex;
+    gap: 30px;
 }
 
 .board {
@@ -205,6 +215,28 @@ body {
 
 .modal_task input {
     width: 290px;
+}
+
+.add_user{
+    padding: 6.5px 16.5px;
+    border-radius: 100%;
+    border: none;
+    font-size: 28px;
+    font-weight: 400;
+    background: #fdc827;
+}
+.users_wrapper{
+    display: flex;
+    gap: 1px;
+}
+.user_img{
+    border-radius: 100%;
+}
+.user_name{
+    display: none;
+}
+.user_email{
+    display: none;
 }
 
 @media screen and (max-width:1350px) {
