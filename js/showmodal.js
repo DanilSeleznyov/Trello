@@ -45,12 +45,12 @@ function showModalTask() {
         <button class="modal_btn create_task" onclick="addCard()">ОК</button>
       </div>                           
     `
-
     
     document.querySelector('.container').innerHTML += modalTask
     document.querySelector('.create_task').addEventListener('click', () => {
         document.querySelector('.modal').remove()
     })
+    
 
 
 }
@@ -59,8 +59,8 @@ function showModalDesc() {
     const modalDesc = `
     <div class="modal modal_desc">
     <h2 class="modal_desc_label">Детальніше</h2>
-    <p class="modal_desc_task"></p>
-    <p class="modal_desc_deadline"></p>
+    <p class="modal_desc_task">${JSON.parse(localStorage.getItem('Tasks'))[0][1]}</p>
+    <p class="modal_desc_deadline">${JSON.parse(localStorage.getItem('Tasks'))[0][3]}</p>
     <button class="modal_btn modal_desc_close">OK</button>
   </div>
     `

@@ -6,6 +6,11 @@ if (localStorage.getItem('Boards')) {
 }else{
     addLocal()
 }
+if (localStorage.getItem('Tasks')) {
+    arrBoards = JSON.parse(localStorage.getItem('Tasks'))
+}else{
+    addLocalTasks()
+}
 function saveBoard() {
     document.querySelector('.boards_user').innerHTML = ''
     arrBoards = JSON.parse(localStorage.getItem(`Boards`))
