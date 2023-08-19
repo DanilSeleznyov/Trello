@@ -1,5 +1,4 @@
 function createBoard(arrBoards, index) {
-
   const board = `
     <div class="board">
         <div class="board_top">

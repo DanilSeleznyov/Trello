@@ -31,23 +31,41 @@ function showModalBoard() {
 
 
     })
-    
+
 }
 
 function showModalTask() {
     const modalTask = `
-    <div class="modal modal_task">     
+      <div class="modal modal_task">     
         <h2 class="modal_title">Створити завдання</h2>
         <input type="text" class="modal_input task_name" placeholder="Назва завдання"> 
         <input type="text" class="modal_input task_desc" placeholder="Опис завдання"> 
         <input type="text" class="modal_input task_tag" placeholder="Тег завдання"> 
         <input type="text" class="modal_input task_deadline" placeholder="Строк завдання"> 
-        <button class="modal_btn create_task">ОК</button>
+        <button class="modal_btn create_task" onclick="addCard()">ОК</button>
       </div>                           
     `
 
+    
     document.querySelector('.container').innerHTML += modalTask
     document.querySelector('.create_task').addEventListener('click', () => {
+        document.querySelector('.modal').remove()
+    })
+
+
+}
+
+function showModalDesc() {
+    const modalDesc = `
+    <div class="modal modal_desc">
+    <h2 class="modal_desc_label">Детальніше</h2>
+    <p class="modal_desc_task"></p>
+    <p class="modal_desc_deadline"></p>
+    <button class="modal_btn modal_desc_close">OK</button>
+  </div>
+    `
+    document.querySelector('.container').innerHTML += modalDesc
+    document.querySelector('.modal_desc_close').addEventListener('click', ()=>{
         document.querySelector('.modal').remove()
     })
 }

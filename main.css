@@ -115,6 +115,7 @@ body {
     max-width: 320px;
     padding: 10px 15px 0 10px;
     border-radius: 8px;
+    min-height: 400px;
     max-height: 400px;
 }
 
@@ -249,6 +250,21 @@ body {
 
 .user:hover .details{
     display: block;
+}
+
+.modal_desc_close{
+    margin-top: 15px;
+}
+
+.modal_desc_task{
+    margin: 10px 0 10px;
+}
+
+.modal_desc{
+    padding: 20px 30px 20px 30px;
+    max-width: 350px;
+    max-height: 700px;
+    border-bottom-right-radius: 40%;
 }
 
 

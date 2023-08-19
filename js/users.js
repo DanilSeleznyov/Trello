@@ -41,4 +41,3 @@ function deleteUser() {
     
 }
 
-deleteUser()
