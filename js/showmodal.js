@@ -1,3 +1,16 @@
+function BoardObj(index, name) {
+    this.name = name
+    this.id = index
+}
+function TaskObj(boardIndex, index, name, desc, tag, deadline) {
+    this.boardIndex = boardIndex
+    this.index = index
+    this.name = name
+    this.desc = desc
+    this.tag = tag
+    this.deadline = deadline
+}
+
 function showModalBoard() {
     const modalBoard = `
         <div class="modal">
@@ -18,23 +31,27 @@ function showModalBoard() {
                 document.querySelector('.board_error_2').style.display = 'block'
                 document.querySelector('.board_error').style.display = 'none'
             } else {
-                arrBoards.push(document.querySelector('.board_name').value)
+                if (localStorage.getItem('boardIndex')) {
+                    boardCount = JSON.parse(localStorage.getItem('boardIndex'))
+                }
+                let boardName = document.querySelector('.board_name').value
+                boardCount = boardCount+1
+                arrBoards.push(new BoardObj(boardCount, boardName))
                 localStorage.setItem(`Boards`, JSON.stringify(arrBoards))
+                localStorage.setItem('boardIndex', JSON.stringify(boardCount))
                 document.querySelector('.modal').remove()
-                createBoard(arrBoards)
+                createBoard(arrBoards, boardCount)
+                getBtnId()
             }
 
         } else {
             document.querySelector('.board_error').style.display = 'block'
             document.querySelector('.board_error_2').style.display = 'none'
         }
-
-
     })
-
 }
 
-function showModalTask() {
+function showModalTask(btnIndex) {
     const modalTask = `
       <div class="modal modal_task">     
         <h2 class="modal_title">Створити завдання</h2>
@@ -42,25 +59,19 @@ function showModalTask() {
         <input type="text" class="modal_input task_desc" placeholder="Опис завдання"> 
         <input type="text" class="modal_input task_tag" placeholder="Тег завдання"> 
         <input type="text" class="modal_input task_deadline" placeholder="Строк завдання"> 
-        <button class="modal_btn create_task" onclick="addCard()">ОК</button>
+        <button class="modal_btn create_task" onclick="addCard(${btnIndex})">ОК</button>
       </div>                           
     `
-    
     document.querySelector('.container').innerHTML += modalTask
-    document.querySelector('.create_task').addEventListener('click', () => {
-        document.querySelector('.modal').remove()
-    })
     
-
-
 }
 
 function showModalDesc() {
     const modalDesc = `
     <div class="modal modal_desc">
     <h2 class="modal_desc_label">Детальніше</h2>
-    <p class="modal_desc_task">${JSON.parse(localStorage.getItem('Tasks'))[0][1]}</p>
-    <p class="modal_desc_deadline">${JSON.parse(localStorage.getItem('Tasks'))[0][3]}</p>
+    <p class="modal_desc_task">${JSON.parse(localStorage.getItem('Tasks'))[taskCount].desc}</p>
+    <p class="modal_desc_deadline">${JSON.parse(localStorage.getItem('Tasks'))[taskCount].deadline}</p>
     <button class="modal_btn modal_desc_close">OK</button>
   </div>
     `

@@ -9,5 +9,4 @@ function addLocalTasks() {
 function updateLocal() {
     localStorage.setItem('Boards', JSON.stringify(arrBoards))
     saveBoard()
-
 }

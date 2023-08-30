@@ -8,3 +8,6 @@ if (JSON.parse(localStorage.getItem('Boards'))) {
     saveBoard(arrBoards)
 }
 getUsers()
+document.addEventListener('DOMContentLoaded', ()=>{
+    getBtnId()
+})
