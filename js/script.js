@@ -7,7 +7,16 @@ createBtn.addEventListener('click', showModalBoard)
 if (JSON.parse(localStorage.getItem('Boards'))) {
     saveBoard(arrBoards)
 }
-getUsers()
+if(localStorage.getItem('Tasks')){
+    saveTask()
+}
+
 document.addEventListener('DOMContentLoaded', ()=>{
+    if (document.querySelectorAll('.board').length > 3) {
+        boardCount = JSON.parse(localStorage.getItem('Boards')).length + 2
+        localStorage.setItem('boardIndex', JSON.stringify(boardCount))
+    }
     getBtnId()
+    getUsers()
+    checkCards()
 })

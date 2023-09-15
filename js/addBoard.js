@@ -1,4 +1,4 @@
-function createBoard(arrBoards, index) {
+function createBoard(arrBoards, boardCount, index) {
   const board = `
     <div class="board" id="${boardCount}">
         <div class="board_top">
@@ -8,7 +8,7 @@ function createBoard(arrBoards, index) {
             <button class="delete" onclick="deleteBoard(${index})"><img src="icons8-delete-50.png" alt=""></button>
           </div>
         </div>
-        <div class="card_wrapper">
+        <div class="card_wrapper" id="${boardCount}">
         </div>
       </div>
     `

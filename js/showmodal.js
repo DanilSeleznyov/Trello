@@ -66,18 +66,22 @@ function showModalTask(btnIndex) {
     
 }
 
-function showModalDesc() {
+
+function showModalDesc(cardIndex) {
     const modalDesc = `
     <div class="modal modal_desc">
     <h2 class="modal_desc_label">Детальніше</h2>
-    <p class="modal_desc_task">${JSON.parse(localStorage.getItem('Tasks'))[taskCount].desc}</p>
-    <p class="modal_desc_deadline">${JSON.parse(localStorage.getItem('Tasks'))[taskCount].deadline}</p>
+    <p class="modal_desc_task">${JSON.parse(localStorage.getItem('Tasks'))[cardIndex].desc}</p>
+    <p class="modal_desc_deadline">${JSON.parse(localStorage.getItem('Tasks'))[cardIndex].deadline}</p>
     <button class="modal_btn modal_desc_close">OK</button>
+    <button class="modal_btn modal_desc_delete" onclick="deleteCard(${cardIndex})">Delete</button>
   </div>
     `
     document.querySelector('.container').innerHTML += modalDesc
     document.querySelector('.modal_desc_close').addEventListener('click', ()=>{
         document.querySelector('.modal').remove()
+        checkCards()
+        getBtnId()
     })
 }
 
