@@ -35,7 +35,7 @@ function showModalBoard() {
                     boardCount = JSON.parse(localStorage.getItem('boardIndex'))
                 }
                 let boardName = document.querySelector('.board_name').value
-                boardCount = boardCount+1
+                boardCount = boardCount + 1
                 arrBoards.push(new BoardObj(boardCount, boardName))
                 localStorage.setItem(`Boards`, JSON.stringify(arrBoards))
                 localStorage.setItem('boardIndex', JSON.stringify(boardCount))
@@ -63,7 +63,7 @@ function showModalTask(btnIndex) {
       </div>                           
     `
     document.querySelector('.container').innerHTML += modalTask
-    
+
 }
 
 
@@ -78,10 +78,80 @@ function showModalDesc(cardIndex) {
   </div>
     `
     document.querySelector('.container').innerHTML += modalDesc
-    document.querySelector('.modal_desc_close').addEventListener('click', ()=>{
+    document.querySelector('.modal_desc_close').addEventListener('click', () => {
         document.querySelector('.modal').remove()
         checkCards()
         getBtnId()
     })
 }
 
+function showModalSettings() {
+    const modalSettings = `
+    <div class="modal modal_settings">
+        <h2 class="modal_title">Налаштування</h2>
+        <p class="input_label">Теги</p>
+        <input type="text" class="modal_input modal_tags" placeholder="tags...">
+        <button class="modal_btn modal_settings_btn">OK</button>
+        <p class="input_label">Колір фону</p>
+        <div class="color_item_wrapper">
+            <div class="color_item color_bg_item" id="04a061"></div>
+            <div class="color_item color_bg_item" id="cf1414"></div>
+            <div class="color_item color_bg_item" id="00c4ff"></div>
+            <div class="color_item color_bg_item" id="a900ff"></div>
+            <div class="color_item color_bg_item" id="ff6fcc"></div>
+            <div class="color_item color_bg_item" id="a5a7a9"></div>
+        </div>
+        <p class="input_label">Колір дошок</p>
+        <div class="color_item_wrapper">
+            <div class="color_item color_board_item" id="fdc827"></div>
+            <div class="color_item color_board_item" id="ff6060"></div>
+            <div class="color_item color_board_item" id="8958ff"></div>
+            <div class="color_item color_board_item" id="ffffff"></div>
+            <div class="color_item color_board_item" id="ffc5ea"></div>
+            <div class="color_item color_board_item" id="818181"></div>
+        </div>
+        <p class="input_label">Колір карток</p>
+        <div class="color_item_wrapper">
+            <div class="color_item color_card_item" id="000000"></div>
+            <div class="color_item color_card_item" id="026800"></div>
+            <div class="color_item color_card_item" id="0088b1"></div>
+            <div class="color_item color_card_item" id="a900ff"></div>
+            <div class="color_item color_card_item" id="04454d"></div>
+            <div class="color_item color_card_item" id="a5a7a9"></div>
+        </div>
+        <button class="modal_btn settings_btn_close">Close</button>
+      </div>
+    `
+    document.querySelector('.container').innerHTML += modalSettings
+
+    document.querySelectorAll('.color_bg_item').forEach(el=>{
+        el.style.cssText = `background:#${el.id};`
+        el.addEventListener('click', ()=>{
+            document.querySelector('.header').style.cssText = `background:#${el.id};`
+            document.querySelector('.container').style.cssText = `background:#${el.id};`
+        })
+        
+    })
+    document.querySelectorAll('.color_board_item').forEach(el=>{
+        el.style.cssText = `background:#${el.id};`
+        el.addEventListener('click', ()=>{
+            document.querySelectorAll('.board').forEach(elem=>{
+                elem.style.cssText = `background:#${el.id};`
+            })
+        })
+        
+    })
+    document.querySelectorAll('.color_card_item').forEach(element=>{
+        element.style.cssText = `background:#${element.id};`
+        element.addEventListener('click', ()=>{
+            document.querySelectorAll('.card').forEach(e=>{
+                e.style.cssText = `background:#${element.id};`
+            })
+        })
+        
+    })
+
+    document.querySelector('.settings_btn_close').addEventListener('click', ()=>{
+        document.querySelector('.modal').remove()
+    })
+}

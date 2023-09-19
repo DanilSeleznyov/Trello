@@ -47,10 +47,14 @@ function addCard(btnIndex) {
 
 
 function deleteCard(cardIndex) {
-    arrTasks = JSON.parse(localStorage.getItem('Tasks'))
+    taskCount = JSON.parse(localStorage.getItem('taskCount'))
+    taskCount = taskCount-1
+    localStorage.setItem('taskCount', JSON.stringify(taskCount))
+    // arrTasks = JSON.parse(localStorage.getItem('Tasks'))
     arrTasks.splice(cardIndex, 1)
     localStorage.setItem('Tasks', JSON.stringify(arrTasks))
     document.querySelector('.modal').remove()
-    checkCards()
+    console.log(1);
     saveTask()
+    getBtnId()
 }

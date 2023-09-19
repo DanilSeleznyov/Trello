@@ -16,13 +16,13 @@ if (localStorage.getItem('Tasks')) {
 } else {
     addLocalTasks()
 }
-if(localStorage.getItem('boardIndex')){
-}else{
-localStorage.setItem('boardIndex', boardCount)
+if (localStorage.getItem('boardIndex')) {
+} else {
+    localStorage.setItem('boardIndex', boardCount)
 }
 function saveBoard() {
     document.querySelector('.boards_user').innerHTML = ''
-    boardCount = boardCount+1
+    boardCount = boardCount + 1
     arrBoards = JSON.parse(localStorage.getItem(`Boards`))
     for (let index = 0; index < arrBoards.length; index++, boardCount++) {
         createBoard(arrBoards, boardCount, index)
@@ -30,15 +30,14 @@ function saveBoard() {
 }
 
 function checkCards() {
-    if(localStorage.getItem('Tasks')){
-    document.querySelectorAll('.card').forEach(el=>{
-        el.addEventListener('click', ()=>{
-            cardIndex = el.id
-            console.log(el.id);
-            showModalDesc(cardIndex)
+    if (localStorage.getItem('Tasks')) {
+        document.querySelectorAll('.card').forEach(el => {
+            el.addEventListener('click', () => {
+                cardIndex = el.id
+                showModalDesc(cardIndex)
+            })
         })
-    })
-}
+    }
 
 }
 
@@ -48,13 +47,11 @@ function saveTask() {
     })
     if (localStorage.getItem('taskCount')) {
         taskCount = JSON.parse(localStorage.getItem('taskCount'))
-        
-        
     }
     arrTasks = JSON.parse(localStorage.getItem('Tasks'))
     for (let index = 0; index < arrTasks.length; index++) {
         arrTasks[index].index = index
-        taskCount = arrTasks.length-1
+        taskCount = arrTasks.length
         localStorage.setItem('Tasks', JSON.stringify(arrTasks))
         const card = `
         <div class="card" id="${arrTasks[index].index}">
@@ -65,8 +62,7 @@ function saveTask() {
         document.querySelectorAll('.card_wrapper')[arrTasks[index].boardIndex].innerHTML += card
         localStorage.setItem('taskCount', JSON.stringify(taskCount))
     }
-    
-    
+    checkCards()
 }
 
 
