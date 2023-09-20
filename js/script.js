@@ -19,4 +19,5 @@ document.addEventListener('DOMContentLoaded', ()=>{
     getBtnId()
     getUsers()
     checkCards()
+    getBackgroundColor()
 })

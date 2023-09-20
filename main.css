@@ -163,7 +163,7 @@ body {
     padding: 6px;
     border-radius: 8px;
     margin-top: 4px;
-    box-shadow: 2px 2px 6px rgb(0, 0, 0, 0.85);
+    box-shadow: 2.5px 2.5px 6px rgb(0, 0, 0, 0.85);
 
 }
 
@@ -288,6 +288,7 @@ body {
 
 .input_label{
     font-family: 'Open Sans', sans-serif;
+    margin-top: 7px;
 }
 
 .modal_tags{

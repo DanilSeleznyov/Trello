@@ -112,11 +112,11 @@ function showModalSettings() {
         </div>
         <p class="input_label">Колір карток</p>
         <div class="color_item_wrapper">
-            <div class="color_item color_card_item" id="000000"></div>
+            <div class="color_item color_card_item" id="04454d"></div>
             <div class="color_item color_card_item" id="026800"></div>
             <div class="color_item color_card_item" id="0088b1"></div>
             <div class="color_item color_card_item" id="a900ff"></div>
-            <div class="color_item color_card_item" id="04454d"></div>
+            <div class="color_item color_card_item" id="000000"></div>
             <div class="color_item color_card_item" id="a5a7a9"></div>
         </div>
         <button class="modal_btn settings_btn_close">Close</button>
@@ -124,34 +124,11 @@ function showModalSettings() {
     `
     document.querySelector('.container').innerHTML += modalSettings
 
-    document.querySelectorAll('.color_bg_item').forEach(el=>{
-        el.style.cssText = `background:#${el.id};`
-        el.addEventListener('click', ()=>{
-            document.querySelector('.header').style.cssText = `background:#${el.id};`
-            document.querySelector('.container').style.cssText = `background:#${el.id};`
-        })
-        
-    })
-    document.querySelectorAll('.color_board_item').forEach(el=>{
-        el.style.cssText = `background:#${el.id};`
-        el.addEventListener('click', ()=>{
-            document.querySelectorAll('.board').forEach(elem=>{
-                elem.style.cssText = `background:#${el.id};`
-            })
-        })
-        
-    })
-    document.querySelectorAll('.color_card_item').forEach(element=>{
-        element.style.cssText = `background:#${element.id};`
-        element.addEventListener('click', ()=>{
-            document.querySelectorAll('.card').forEach(e=>{
-                e.style.cssText = `background:#${element.id};`
-            })
-        })
-        
-    })
+    setTheme()
 
-    document.querySelector('.settings_btn_close').addEventListener('click', ()=>{
+    document.querySelector('.settings_btn_close').addEventListener('click', () => {
         document.querySelector('.modal').remove()
     })
+
+
 }
