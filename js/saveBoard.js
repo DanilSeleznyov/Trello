@@ -5,6 +5,7 @@ let boardCount = 2
 let btnIndex = 0
 let cardIndex;
 let cardDragIndex;
+let titleId;
 // !localStorage.arrBoards ? arrBoards = [] : arrBoards = JSON.parse(localStorage.getItem('Boards'));
 if (localStorage.getItem('Boards')) {
     arrBoards = JSON.parse(localStorage.getItem('Boards'))
@@ -21,6 +22,7 @@ if (localStorage.getItem('boardIndex')) {
     localStorage.setItem('boardIndex', boardCount)
 }
 function saveBoard() {
+    boardCount = 2
     document.querySelector('.boards_user').innerHTML = ''
     boardCount = boardCount + 1
     arrBoards = JSON.parse(localStorage.getItem(`Boards`))

@@ -20,4 +20,5 @@ document.addEventListener('DOMContentLoaded', ()=>{
     getUsers()
     checkCards()
     getBackgroundColor()
+    findTitle()
 })

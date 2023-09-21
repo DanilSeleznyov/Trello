@@ -95,7 +95,7 @@ body {
     flex-wrap: wrap;
     gap: 30px;
     min-height: 900px;
-    padding: 80px 0 0 80px;
+    padding: 80px 0 100px 80px;
     box-shadow: 0px 1px 17px rgb(0, 0, 0, 0.65) inset;
 }
 .boards_main{
@@ -118,6 +118,7 @@ body {
     min-height: 400px;
     height: fit-content;
     box-shadow: 9px 9px 10px rgb(0, 0, 0, 0.65);
+    position: relative;
 }
 
 .board_error {
@@ -181,13 +182,15 @@ body {
 
 .modal {
     background: #F5F2EB;
-    max-height: 160px;
+    max-height: 315px;
     padding: 30px 40px 30px 40px;
     border-radius: 10px;
     position: absolute;
-    left: 650px;
-    top: 300px;
+    left: -24px;
+    top: 117px;
     align-items: center;
+    box-shadow: 6px 6px 9px black;
+    z-index: 1;
 }
 
 .modal_title {
@@ -201,6 +204,17 @@ body {
     font-size: 16px;
     border-radius: 30px;
     font-family: 'Open Sans', sans-serif;
+}
+
+.btn_cancel{
+    border-radius: 10px;
+    background: rgb(255, 73, 73);
+}
+
+.modal_btn_wrapper{
+    margin-top: 10px;
+    display: flex;
+    gap: 15px;
 }
 
 .create_board {
@@ -254,6 +268,7 @@ body {
     top: 57px;
     padding: 7px;
     border-radius: 10px;
+    box-shadow: 3px 3px 10px #000000;
 }
 
 .user:hover .details{
@@ -317,6 +332,33 @@ body {
     background: rgb(214, 40, 40);
     border-radius: 10px;
     margin-top: 25px;
+    
+}
+
+.new_board_title_btn{
+    border-radius: 100%;
+    margin-left: 6px;
+    padding: 7px;
+    box-shadow: 1px 1px 3px black;
+}
+
+.new_board_title_btn:hover{
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
+    background: #048d56;
+}
+
+.new_board_title{
+    font-size: 21px;
+    color: #000;
+    font-weight: 700;
+    border: none;
+    background: none;
+    padding: 3px 0 3px 5px;
+    max-width: 136px;
+}
+
+.new_board_title:active{
+    border: 1px solid rgba(255, 255, 255, 0);
 }
 
 

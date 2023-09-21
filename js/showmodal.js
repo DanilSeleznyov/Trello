@@ -59,10 +59,18 @@ function showModalTask(btnIndex) {
         <input type="text" class="modal_input task_desc" placeholder="Опис завдання"> 
         <input type="text" class="modal_input task_tag" placeholder="Тег завдання"> 
         <input type="text" class="modal_input task_deadline" placeholder="Строк завдання"> 
+        <div class="modal_btn_wrapper">
         <button class="modal_btn create_task" onclick="addCard(${btnIndex})">ОК</button>
+        <button class="modal_btn btn_cancel">Cancel</button>
+        </div>
+        
       </div>                           
     `
-    document.querySelector('.container').innerHTML += modalTask
+    document.querySelectorAll('.board')[btnIndex].innerHTML += modalTask
+
+    document.querySelector('.btn_cancel').addEventListener('click', ()=>{
+        document.querySelector('.modal').remove()
+    })
 
 }
 

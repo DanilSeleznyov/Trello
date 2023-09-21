@@ -1,7 +1,7 @@
 const API__URL = `https://randomuser.me/api/?results=${1}`
 document.querySelector('.add_user').addEventListener('click', getUsers)
 let usersNum = 0
-function getUsers(index) {
+function getUsers() {
     usersNum++
     if (usersNum > 10) {
         return
