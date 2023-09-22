@@ -32,6 +32,7 @@ function dragNdrop() {
             localStorage.setItem('Tasks', JSON.stringify(arrTasks))
         })
     })
+   
 }
 
 document.addEventListener('DOMContentLoaded', dragNdrop)

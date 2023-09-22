@@ -15,7 +15,7 @@ function getBtnId() {
 
 function addCard(btnIndex) {
     if (localStorage.getItem('taskCount')) {
-        taskCount = JSON.parse(localStorage.getItem('taskCount'))
+        taskCount = JSON.parse(localStorage.getItem('taskCount'))-1
     }
     taskCount = taskCount+1
     localStorage.setItem('taskCount', JSON.stringify(taskCount))
@@ -29,13 +29,13 @@ function addCard(btnIndex) {
     let title = JSON.parse(localStorage.getItem('Tasks'))[taskCount].name
     let tagText = JSON.parse(localStorage.getItem('Tasks'))[taskCount].tag
     const card = `
-    <div class="card" id="${taskCount}">
+    <div class="card" id="${taskCount}" draggable="true">
     <h2 class="card_title">${title}</h2>
     <div class="tags_wrapper">${tagText}</div>
     </div>
     `
     
-    document.querySelectorAll('.board').forEach(el => {
+    document.querySelectorAll('.card_wrapper').forEach(el => {
         if (el.id == btnIndex) {
             el.innerHTML += card
         }
@@ -43,6 +43,9 @@ function addCard(btnIndex) {
     document.querySelector('.modal').remove()
     getBtnId()
     checkCards()
+    getBackgroundColor()
+    saveTask()
+    dragNdrop()
 }
 
 
@@ -54,7 +57,7 @@ function deleteCard(cardIndex) {
     arrTasks.splice(cardIndex, 1)
     localStorage.setItem('Tasks', JSON.stringify(arrTasks))
     document.querySelector('.modal').remove()
-    console.log(1);
     saveTask()
     getBtnId()
+    getBackgroundColor()
 }

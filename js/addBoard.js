@@ -16,6 +16,7 @@ function createBoard(arrBoards, boardCount, index) {
   document.querySelector('.boards_user').innerHTML += board
   getBackgroundColor()
   findTitle()
+  dragNdrop()
 }
 
 

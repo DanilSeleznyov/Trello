@@ -16,6 +16,8 @@ document.querySelectorAll('.title').forEach(elem=>{
     elem.addEventListener('dblclick', ()=>{
         saveBoard()
         findTitle()
+        saveTask()
+        getBackgroundColor()
     })
 })
 document.querySelector('.new_board_title_btn').addEventListener('click', ()=>{
@@ -30,7 +32,9 @@ document.querySelector('.new_board_title_btn').addEventListener('click', ()=>{
     arrBoards[titleId-3].name = inputTitle.value
     localStorage.setItem('Boards', JSON.stringify(arrBoards))
     saveBoard()
+    saveTask()
     findTitle()
+    getBackgroundColor()
 })
 }
 

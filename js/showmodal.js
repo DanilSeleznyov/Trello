@@ -14,6 +14,7 @@ function TaskObj(boardIndex, index, name, desc, tag, deadline) {
 function showModalBoard() {
     const modalBoard = `
         <div class="modal">
+        <button class="modal_btn_cancel" onclick="closeModal()">×</button>
             <h2 class="modal_title">Створити дошку</h2>
            <input type="text" class="board_name" placeholder="Назва дошки"> 
            <button class="create_board">ОК</button>
@@ -51,6 +52,11 @@ function showModalBoard() {
     })
 }
 
+function closeModal() {
+    document.querySelector('.modal').remove()
+    getBtnId()
+}
+
 function showModalTask(btnIndex) {
     const modalTask = `
       <div class="modal modal_task">     
@@ -68,7 +74,7 @@ function showModalTask(btnIndex) {
     `
     document.querySelectorAll('.board')[btnIndex].innerHTML += modalTask
 
-    document.querySelector('.btn_cancel').addEventListener('click', ()=>{
+    document.querySelector('.btn_cancel').addEventListener('click', () => {
         document.querySelector('.modal').remove()
     })
 
@@ -78,15 +84,16 @@ function showModalTask(btnIndex) {
 function showModalDesc(cardIndex) {
     const modalDesc = `
     <div class="modal modal_desc">
-    <h2 class="modal_desc_label">Детальніше</h2>
-    <p class="modal_desc_task">${JSON.parse(localStorage.getItem('Tasks'))[cardIndex].desc}</p>
-    <p class="modal_desc_deadline">${JSON.parse(localStorage.getItem('Tasks'))[cardIndex].deadline}</p>
-    <button class="modal_btn modal_desc_close">OK</button>
-    <button class="modal_btn modal_desc_delete" onclick="deleteCard(${cardIndex})">Delete</button>
-  </div>
+     <h2 class="modal_desc_label">Детальніше</h2>
+     <p class="modal_desc_task">${JSON.parse(localStorage.getItem('Tasks'))[cardIndex].desc}</p>
+     <p class="modal_desc_deadline">${JSON.parse(localStorage.getItem('Tasks'))[cardIndex].deadline}</p>
+     <button class="modal_btn modal_desc_close">OK</button>
+     <button class="modal_btn modal_desc_delete" onclick="deleteCard(${cardIndex})">Delete</button>
+    </div>
     `
-    document.querySelector('.container').innerHTML += modalDesc
+    document.querySelectorAll('.board')[JSON.parse(localStorage.getItem('Tasks'))[cardIndex].boardIndex].innerHTML += modalDesc
     document.querySelector('.modal_desc_close').addEventListener('click', () => {
+        console.log(1212);
         document.querySelector('.modal').remove()
         checkCards()
         getBtnId()
@@ -130,7 +137,7 @@ function showModalSettings() {
         <button class="modal_btn settings_btn_close">Close</button>
       </div>
     `
-    document.querySelector('.container').innerHTML += modalSettings
+    document.querySelector('.header').innerHTML += modalSettings
 
     setTheme()
 

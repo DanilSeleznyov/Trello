@@ -3,7 +3,6 @@ const createBtn = document.querySelector('.create'),
     settingsBtn = document.querySelector('.settings'),
     addBtns = document.querySelectorAll('.add')
     
-createBtn.addEventListener('click', showModalBoard)
 if (JSON.parse(localStorage.getItem('Boards'))) {
     saveBoard(arrBoards)
 }
