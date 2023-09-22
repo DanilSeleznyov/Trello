@@ -1,15 +1,15 @@
-function getBtnId() {
-    let addBtnsArr = document.querySelectorAll('.add')
-    console.log(addBtnsArr);
-    addBtnsArr.forEach(el => {
-        el.addEventListener('click', () => {
-            btnIndex = el.id
-            console.log(btnIndex);
-            showModalTask(btnIndex)
-        })
+// function getBtnId() {
+//     let addBtnsArr = document.querySelectorAll('.add')
+//     console.log(addBtnsArr);
+//     addBtnsArr.forEach(el => {
+//         el.addEventListener('click', () => {
+//             btnIndex = el.id
+//             console.log(btnIndex);
+//             showModalTask(btnIndex)
+//         })
 
-    })
-}
+//     })
+// }
 
 
 
@@ -41,7 +41,6 @@ function addCard(btnIndex) {
         }
     })
     document.querySelector('.modal').remove()
-    getBtnId()
     checkCards()
     getBackgroundColor()
     saveTask()
@@ -58,6 +57,5 @@ function deleteCard(cardIndex) {
     localStorage.setItem('Tasks', JSON.stringify(arrTasks))
     document.querySelector('.modal').remove()
     saveTask()
-    getBtnId()
     getBackgroundColor()
 }

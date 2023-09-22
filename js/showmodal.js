@@ -42,7 +42,6 @@ function showModalBoard() {
                 localStorage.setItem('boardIndex', JSON.stringify(boardCount))
                 document.querySelector('.modal').remove()
                 createBoard(arrBoards, boardCount)
-                getBtnId()
             }
 
         } else {
@@ -54,10 +53,9 @@ function showModalBoard() {
 
 function closeModal() {
     document.querySelector('.modal').remove()
-    getBtnId()
 }
 
-function showModalTask(btnIndex) {
+function showModalTask(boardCount) {
     const modalTask = `
       <div class="modal modal_task">     
         <h2 class="modal_title">Створити завдання</h2>
@@ -66,16 +64,17 @@ function showModalTask(btnIndex) {
         <input type="text" class="modal_input task_tag" placeholder="Тег завдання"> 
         <input type="text" class="modal_input task_deadline" placeholder="Строк завдання"> 
         <div class="modal_btn_wrapper">
-        <button class="modal_btn create_task" onclick="addCard(${btnIndex})">ОК</button>
+        <button class="modal_btn create_task" onclick="addCard(${boardCount})">ОК</button>
         <button class="modal_btn btn_cancel">Cancel</button>
         </div>
         
       </div>                           
     `
-    document.querySelectorAll('.board')[btnIndex].innerHTML += modalTask
+    document.querySelectorAll('.board')[boardCount].innerHTML += modalTask
 
     document.querySelector('.btn_cancel').addEventListener('click', () => {
         document.querySelector('.modal').remove()
+        getBackgroundColor()
     })
 
 }
@@ -96,7 +95,6 @@ function showModalDesc(cardIndex) {
         console.log(1212);
         document.querySelector('.modal').remove()
         checkCards()
-        getBtnId()
     })
 }
 

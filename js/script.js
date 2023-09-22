@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
         boardCount = JSON.parse(localStorage.getItem('Boards')).length + 2
         localStorage.setItem('boardIndex', JSON.stringify(boardCount))
     }
-    getBtnId()
     getUsers()
     checkCards()
     getBackgroundColor()
