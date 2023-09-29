@@ -11,13 +11,13 @@
       <div class="wrapper">
         <div class="logo">trello</div>
         <div class="header_content">
-          <button class="create" onclick="showModalBoard()">Create</button>
+          <button class="create" onclick="showModalBoard()">Створити</button>
           <div class="users">
             <button class="add_user">+</button>
             <div class="users_wrapper"></div>
           </div>
-          <input type="text" class="tags" placeholder="tags"/>
-          <button class="settings" onclick="showModalSettings()">Settings</button>
+          <input type="text" class="tags" placeholder="теги..." oninput="tagSearch()"/>
+          <button class="settings" onclick="showModalSettings()">Налаштування</button>
         </div>
       </div>
     </header>
@@ -54,7 +54,9 @@
           </div>
         </div>
       </div>
-      <div class="boards_user"></div>
+      <div class="boards_user">
+
+      </div>
     </div>
     <script src="js/localStorage.js"></script>
     <script src="js/saveBoard.js"></script>
@@ -65,7 +67,9 @@
     <script src="js/addBoard.js"></script>
     <script src="js/card.js"></script>
     <script src="js/settings.js"></script>
+    <script src="js/tagSearch.js"></script>
     <script src="js/showmodal.js"></script>
     <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>

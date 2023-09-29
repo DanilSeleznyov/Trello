@@ -21,11 +21,6 @@ document.querySelectorAll('.title').forEach(elem=>{
     })
 })
 document.querySelector('.new_board_title_btn').addEventListener('click', ()=>{
-    // if (document.querySelector('.new_board_title').value == '') {
-    //     el.style.cssText = 'background:rgb(207, 20, 20, 0.4);'
-    // }else{
-    //     el.style.cssText = 'background:none;'
-    // }
     arrBoards = JSON.parse(localStorage.getItem('Boards'))
     const inputTitle = document.querySelector('.new_board_title')
     console.log(titleId);

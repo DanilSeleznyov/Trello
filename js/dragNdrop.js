@@ -25,14 +25,16 @@ function dragNdrop() {
             e.preventDefault()
         })
         el.addEventListener('drop', ()=>{
-            el.append(dragableBox)
+            if (dragableBox != null) {
+                el.append(dragableBox)
             cardDragIndex = JSON.parse(localStorage.getItem('dragIndex'))
             arrTasks = JSON.parse(localStorage.getItem('Tasks'))
             arrTasks[cardDragIndex].boardIndex = el.id
             localStorage.setItem('Tasks', JSON.stringify(arrTasks))
+            dragNdrop()
+            }
         })
     })
-   
 }
 
 document.addEventListener('DOMContentLoaded', dragNdrop)

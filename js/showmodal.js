@@ -61,7 +61,8 @@ function showModalTask(boardCount) {
         <h2 class="modal_title">Створити завдання</h2>
         <input type="text" class="modal_input task_name" placeholder="Назва завдання"> 
         <input type="text" class="modal_input task_desc" placeholder="Опис завдання"> 
-        <input type="text" class="modal_input task_tag" placeholder="Тег завдання"> 
+        <input type="text" class="modal_input task_tag" placeholder="Тег завдання" oninput="selectTags()"> 
+        <div class="task_tag_error">Такого тегу немає!</div>
         <input type="text" class="modal_input task_deadline" placeholder="Строк завдання"> 
         <div class="modal_btn_wrapper">
         <button class="modal_btn create_task" onclick="addCard(${boardCount})">ОК</button>
@@ -92,9 +93,7 @@ function showModalDesc(cardIndex) {
     `
     document.querySelectorAll('.board')[JSON.parse(localStorage.getItem('Tasks'))[cardIndex].boardIndex].innerHTML += modalDesc
     document.querySelector('.modal_desc_close').addEventListener('click', () => {
-        console.log(1212);
         document.querySelector('.modal').remove()
-        checkCards()
     })
 }
 
@@ -104,7 +103,7 @@ function showModalSettings() {
         <h2 class="modal_title">Налаштування</h2>
         <p class="input_label">Теги</p>
         <input type="text" class="modal_input modal_tags" placeholder="tags...">
-        <button class="modal_btn modal_settings_btn">OK</button>
+        <button class="modal_btn modal_settings_btn" onclick="addTags()">OK</button>
         <p class="input_label">Колір фону</p>
         <div class="color_item_wrapper">
             <div class="color_item color_bg_item" id="04a061"></div>
@@ -141,7 +140,17 @@ function showModalSettings() {
 
     document.querySelector('.settings_btn_close').addEventListener('click', () => {
         document.querySelector('.modal').remove()
+        dragNdrop()
     })
 
 
+}
+
+function showModalNoTags() {
+    Swal.fire({
+        title: 'Додайте теги!',
+        text: '(Це можна зробити в панелі налаштувань)',
+        icon: 'warning',
+        confirmButtonText: 'ОК',
+      })
 }

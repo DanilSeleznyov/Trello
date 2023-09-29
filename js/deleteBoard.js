@@ -4,5 +4,4 @@ function deleteBoard(index) {
     boardCount = JSON.parse(localStorage.getItem('Boards')).length + 2
     localStorage.setItem('boardIndex', JSON.stringify(boardCount))
     getBackgroundColor()
-    checkCards()
 }

@@ -1,3 +1,10 @@
+const createBtn = document.querySelector('.create'),
+    tagInput = document.querySelector('.tags'),
+    settingsBtn = document.querySelector('.settings'),
+    addBtns = document.querySelectorAll('.add')
+    
+    
+
 let arrBoards = []
 let arrTasks = []
 let taskCount = -1
@@ -6,7 +13,8 @@ let btnIndex = 0
 let cardIndex;
 let cardDragIndex;
 let titleId;
-// !localStorage.arrBoards ? arrBoards = [] : arrBoards = JSON.parse(localStorage.getItem('Boards'));
+let tagsArr = []
+let modalTagInput;
 if (localStorage.getItem('Boards')) {
     arrBoards = JSON.parse(localStorage.getItem('Boards'))
 } else {
@@ -31,18 +39,6 @@ function saveBoard() {
     }
 }
 
-function checkCards() {
-    if (localStorage.getItem('Tasks')) {
-        document.querySelectorAll('.card').forEach(el => {
-            el.addEventListener('dblclick', () => {
-                cardIndex = el.id
-                showModalDesc(cardIndex)
-            })
-        })
-    }
-
-}
-
 function saveTask() {
     document.querySelectorAll('.card_wrapper').forEach(el => {
         el.innerHTML = ''
@@ -56,7 +52,7 @@ function saveTask() {
         taskCount = arrTasks.length
         localStorage.setItem('Tasks', JSON.stringify(arrTasks))
         const card = `
-        <div class="card" id="${arrTasks[index].index}" draggable="true">
+        <div class="card" id="${arrTasks[index].index}" draggable="true" ondblclick="showModalDesc(${arrTasks[index].index})">
         <h2 class="card_title">${arrTasks[index].name}</h2>
         <div class="tags_wrapper">${arrTasks[index].tag}</div>
         </div>
@@ -64,7 +60,6 @@ function saveTask() {
         document.querySelectorAll('.card_wrapper')[arrTasks[index].boardIndex].innerHTML += card
         localStorage.setItem('taskCount', JSON.stringify(taskCount))
     }
-    checkCards()
 }
 
 

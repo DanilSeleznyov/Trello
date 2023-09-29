@@ -194,6 +194,14 @@ body {
     min-height: 300px;
 }
 
+.task_tag_error{
+    color: red;
+    font-size: 15px;
+    font-weight: 700;
+    margin:-4px 145px 0 0;
+    display: none;
+}
+
 .modal {
     color: #000;
     background: #F5F2EB;
@@ -249,9 +257,9 @@ body {
     display: flex;
     flex-direction: column;
     gap: 6px;
-    min-height: 300px;
     left: -24px;
-    top: 115px;
+    top: 72px;
+    padding: 20px;
 }
 
 .modal_task input {

@@ -1,8 +1,3 @@
-const createBtn = document.querySelector('.create'),
-    tagInput = document.querySelector('.tags'),
-    settingsBtn = document.querySelector('.settings'),
-    addBtns = document.querySelectorAll('.add')
-    
 if (JSON.parse(localStorage.getItem('Boards'))) {
     saveBoard(arrBoards)
 }
@@ -16,7 +11,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
         localStorage.setItem('boardIndex', JSON.stringify(boardCount))
     }
     getUsers()
-    checkCards()
     getBackgroundColor()
     findTitle()
 })
